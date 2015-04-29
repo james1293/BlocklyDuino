@@ -26,15 +26,14 @@
  * @author gasolin@gmail.com (Fred Lin)
  */
 
-goog.provide('Blockly.Arduino.grove');
+goog.provide('Blockly.Arduino.james1293');
 
 goog.require('Blockly.Arduino');
 
 
-Blockly.Arduino.grove_led = function() {
-  var dropdown_pin = this.getFieldValue('PIN');
-  var dropdown_stat = this.getFieldValue('STAT');
-  Blockly.Arduino.setups_['setup_green_led_'+dropdown_pin] = 'pinMode('+dropdown_pin+', OUTPUT);';
-  var code = 'digitalWrite('+dropdown_pin+','+dropdown_stat+');\n'
-  return code;
+Blockly.Arduino.inout_highlow_three = function() {
+  // Boolean values HIGH and LOW.
+  var code = (this.getFieldValue('BOOL') == 'HIGH') ? 'HIGH' : 'LOW';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
+

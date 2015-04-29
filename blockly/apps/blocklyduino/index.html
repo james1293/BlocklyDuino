@@ -313,8 +313,12 @@ function init() {
 
   <xml id="toolbox" style="display: none">
     <category name="In/Out">
-      <block type="inout_highlow"></block>
+        <block type="inout_highlow_two"></block>
+        
+        
+      
       <block type="inout_digital_write"></block>
+        
       <block type="inout_digital_read"></block>
       <block type="inout_analog_write">
         <value name="NUM">
@@ -347,7 +351,13 @@ function init() {
         </value>
       </block>
       <block type="servo_read_degrees"></block>
+        <block type="inout_highlow_three"></block>
     </category>
+      
+      <category name="Other">
+      <block type="inout_highlow_three"></block>
+      </category>
+  
       
       <!-- commenting out grove stuff
 

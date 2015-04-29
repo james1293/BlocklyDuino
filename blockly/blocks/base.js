@@ -31,12 +31,26 @@ goog.provide('Blockly.Blocks.base');
 goog.require('Blockly.Blocks');
 
 
+
+Blockly.Blocks['inout_highlow_two'] = {
+  helpUrl: 'http://arduino.cc/en/Reference/Constants',
+  init: function() {
+    this.setColour(230);
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["HIGH", "HIGH"], ["LOW", "LOW"]]), 'BOOL')
+    this.setOutput(true, 'Boolean');
+    this.setTooltip('');
+  }
+};
+
+
+
 Blockly.Blocks['base_delay'] = {
   helpUrl: 'http://arduino.cc/en/Reference/delay',
   init: function() {
     this.setColour(120);
     this.appendValueInput("DELAY_TIME", 'Number')
-        .appendField("Delay")
+        .appendField("Delay whee")
         .setCheck('Number');
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
