@@ -31,9 +31,44 @@ goog.provide('Blockly.Arduino.james1293');
 goog.require('Blockly.Arduino');
 
 
-Blockly.Arduino.inout_highlow_three = function() {
-  // Boolean values HIGH and LOW.
-  var code = (this.getFieldValue('BOOL') == 'HIGH') ? 'HIGH' : 'LOW';
-  return [code, Blockly.Arduino.ORDER_ATOMIC];
+Blockly.Arduino.inout_digital_on = function() {
+  var dropdown_pin = this.getFieldValue('PIN');
+  //var dropdown_stat = this.getFieldValue('STAT');
+  Blockly.Arduino.setups_['setup_output_' + dropdown_pin] = 'pinMode(' + dropdown_pin + ', OUTPUT);';
+  var code = 'digitalWrite(' + dropdown_pin + ', ' + 'HIGH' + ');\n'
+  return code;
 };
 
+
+Blockly.Arduino.inout_digital_off = function() {
+  var dropdown_pin = this.getFieldValue('PIN');
+  //var dropdown_stat = this.getFieldValue('STAT');
+  Blockly.Arduino.setups_['setup_output_' + dropdown_pin] = 'pinMode(' + dropdown_pin + ', OUTPUT);';
+  var code = 'digitalWrite(' + dropdown_pin + ', ' + 'LOW' + ');\n'
+  return code;
+};
+
+
+Blockly.Arduino.controls_if_else_simple = function() {
+  // Based on If/elseif/else condition.
+  //var n = 0;
+  var argument = Blockly.Arduino.valueToCode(this, 'IF',
+      Blockly.Arduino.ORDER_NONE) || 'false';
+  var branch = Blockly.Arduino.statementToCode(this, 'DO');
+  var code = 'if (' + argument + ') {\n' + branch + '\n}';
+  //for (n = 1; n <= this.elseifCount_; n++) {
+  //  argument = Blockly.Arduino.valueToCode(this, 'IF' + n,
+  //    Blockly.Arduino.ORDER_NONE) || 'false';
+  //  branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
+  //  code += ' else if (' + argument + ') {\n' + branch + '}';
+  //}
+  //if (this.elseCount_) {
+    branch = Blockly.Arduino.statementToCode(this, 'ELSE');
+    code += ' else {\n' + branch + '\n}';
+  //}
+  
+  
+  
+  
+  return code + '\n';
+};

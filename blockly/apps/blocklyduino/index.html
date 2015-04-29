@@ -313,11 +313,12 @@ function init() {
 
   <xml id="toolbox" style="display: none">
     <category name="In/Out">
-        <block type="inout_highlow_two"></block>
         
+        <block type="inout_digital_on"></block>
+        <block type="inout_digital_off"></block>
         
       
-      <block type="inout_digital_write"></block>
+      
         
       <block type="inout_digital_read"></block>
       <block type="inout_analog_write">
@@ -351,12 +352,10 @@ function init() {
         </value>
       </block>
       <block type="servo_read_degrees"></block>
-        <block type="inout_highlow_three"></block>
+        
     </category>
       
-      <category name="Other">
-      <block type="inout_highlow_three"></block>
-      </category>
+      
   
       
       <!-- commenting out grove stuff
@@ -410,6 +409,7 @@ function init() {
     <sep></sep>
     <category name="Logic">
       <block type="controls_if"></block>
+      <block type="controls_if_else_simple"></block>
       <block type="logic_compare"></block>
       <block type="logic_operation"></block>
       <block type="logic_negate"></block>

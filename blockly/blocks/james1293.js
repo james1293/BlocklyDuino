@@ -31,15 +31,62 @@ goog.provide('Blockly.Blocks.james1293');
 goog.require('Blockly.Blocks');
 
 
-Blockly.Blocks['inout_highlow_three'] = {
-  helpUrl: 'http://arduino.cc/en/Reference/Constants',
+Blockly.Blocks['inout_digital_on'] = {
+  helpUrl: 'http://arduino.cc/en/Reference/DigitalWrite',
   init: function() {
     this.setColour(230);
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["HIGH", "HIGH"], ["LOW", "LOW"]]), 'BOOL')
-    this.setOutput(true, 'Boolean');
-    this.setTooltip('');
+	      .appendField("digital")
+	      .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN")
+    this.appendDummyInput()
+	      .appendField("on")
+      	//.appendField("Stat")
+      	//.appendField(new Blockly.FieldDropdown([["HIGH", "HIGH"], ["LOW", "LOW"]]), "STAT");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Write digital value to a specific Port');
   }
 };
 
 
+Blockly.Blocks['inout_digital_off'] = {
+  helpUrl: 'http://arduino.cc/en/Reference/DigitalWrite',
+  init: function() {
+    this.setColour(230);
+    this.appendDummyInput()
+	      .appendField("digital")
+	      .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN")
+    this.appendDummyInput()
+	      .appendField("off")
+      	//.appendField("Stat")
+      	//.appendField(new Blockly.FieldDropdown([["HIGH", "HIGH"], ["LOW", "LOW"]]), "STAT");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Write digital value to a specific Port');
+  }
+};
+
+//izzle
+//controls_if_else
+
+Blockly.Blocks['controls_if_else_simple'] = {
+  /**
+   * Block for if/elseif/else condition.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.CONTROLS_IF_HELPURL);
+    this.setColour(Blockly.Blocks.logic.HUE);
+    this.appendValueInput('IF')
+        .setCheck('Boolean')
+        .appendField(Blockly.Msg.CONTROLS_IF_MSG_IF);
+    this.appendStatementInput('DO')
+        .appendField(Blockly.Msg.CONTROLS_IF_MSG_THEN);
+    this.appendStatementInput('ELSE')
+        .appendField(Blockly.Msg.CONTROLS_IF_MSG_ELSE);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+  }
+};
