@@ -31,6 +31,7 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks.logic.HUE = 210;
 
+
 Blockly.Blocks['controls_if'] = {
   /**
    * Block for if/elseif/else condition.
@@ -38,7 +39,7 @@ Blockly.Blocks['controls_if'] = {
    */
   init: function() {
     this.setHelpUrl(Blockly.Msg.CONTROLS_IF_HELPURL);
-    this.setColour(Blockly.Blocks.logic.HUE);
+    this.setColour(Blockly.Blocks.loops.HUE);
     this.appendValueInput('IF0')
         .setCheck('Boolean')
         .appendField(Blockly.Msg.CONTROLS_IF_MSG_IF);

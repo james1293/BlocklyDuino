@@ -78,7 +78,7 @@ Blockly.Blocks['controls_if_else_simple'] = {
    */
   init: function() {
     this.setHelpUrl(Blockly.Msg.CONTROLS_IF_HELPURL);
-    this.setColour(Blockly.Blocks.logic.HUE);
+    this.setColour(Blockly.Blocks.loops.HUE);
     this.appendValueInput('IF')
         .setCheck('Boolean')
         .appendField(Blockly.Msg.CONTROLS_IF_MSG_IF);

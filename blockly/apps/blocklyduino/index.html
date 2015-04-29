@@ -345,13 +345,9 @@ function init() {
             <field name="NUM">0</field>
           </block>
         </value>
-        <value name="DELAY_TIME">
-          <block type="math_number">
-            <field name="NUM">1000</field>
-          </block>
-        </value>
       </block>
-      <block type="servo_read_degrees"></block>
+      
+      
         
     </category>
       
@@ -408,14 +404,15 @@ function init() {
       
     <sep></sep>
     <category name="Logic">
-      <block type="controls_if"></block>
-      <block type="controls_if_else_simple"></block>
+      
       <block type="logic_compare"></block>
       <block type="logic_operation"></block>
       <block type="logic_negate"></block>
       <block type="logic_null"></block>
     </category>
     <category name="Control">
+      <block type="controls_if"></block>
+      <block type="controls_if_else_simple"></block>
       <block type="base_delay">
         <value name="DELAY_TIME">
           <block type="math_number">
