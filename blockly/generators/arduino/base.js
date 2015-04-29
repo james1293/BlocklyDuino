@@ -122,7 +122,7 @@ Blockly.Arduino.servo_move = function() {
   Blockly.Arduino.definitions_['var_servo' + dropdown_pin] = 'Servo servo_' + dropdown_pin + ';\n';
   Blockly.Arduino.setups_['setup_servo_' + dropdown_pin] = 'servo_' + dropdown_pin + '.attach(' + dropdown_pin + ');\n';
 
-  var code = 'servo_' + dropdown_pin + '.write(' + value_degree + ');\n' + 'delay(' + delay_time + ');\n';
+  var code = 'servo_' + dropdown_pin + '.write(' + value_degree + ');\n'; // + 'delay(' + delay_time + ');\n';
   return code;
 };
 
