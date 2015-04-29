@@ -68,8 +68,7 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
                         print "ino upload returned " + `rc`            
                         self.send_response(500)
                     else:
-                        self.send_response(200)                        
-            os.chdir("..")
+                        self.send_response(200)
 
 if __name__ == '__main__':
     print "running local web server at 127.0.0.1:8080..."
