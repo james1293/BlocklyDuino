@@ -3,30 +3,8 @@
   <meta charset="utf-8">
   <title>BlocklyDuino</title>
   <script type="text/javascript" src="../../blockly_compressed.js"></script>
-  <!-- blocks uncompressed for easier development, as per https://developers.google.com/blockly/guides/modify/web/building?hl=ja -->
-  <script src="../../blocks/base.js"></script>
-  <script src="../../blocks/colour.js"></script>
-  <script src="../../blocks/grove.js"></script>
-  <script src="../../blocks/james-additions.js"></script> <!-- my additions -->
-  <script src="../../blocks/lists.js"></script>
-  <script src="../../blocks/logic.js"></script>
-  <script src="../../blocks/loops.js"></script>
-  <script src="../../blocks/math.js"></script>
-  <script src="../../blocks/procedures.js"></script>
-  <script src="../../blocks/text.js"></script>
-  <script src="../../blocks/variables.js"></script>
-  <!-- generators uncompressed for easier development, as per https://developers.google.com/blockly/guides/modify/web/building?hl=ja -->
-  <script src="../../generators/arduino.js"></script>
-  <script src="../../generators/arduino/base.js"></script>
-  <script src="../../generators/arduino/control.js"></script>
-  <script src="../../generators/arduino/grove.js"></script> 
-  <script type="text/javascript" src="../../generators/arduino/james-additions.js"></script> <!-- my additions -->
-  <script src="../../generators/arduino/logic.js"></script>
-  <script src="../../generators/arduino/math.js"></script>
-  <script src="../../generators/arduino/procedures.js"></script>
-  <script src="../../generators/arduino/text.js"></script>
-  <script src="../../generators/arduino/variables.js"></script>
-
+  <script type="text/javascript" src="../../blocks_compressed.js"></script>
+  <script type="text/javascript" src="../../arduino_compressed.js"></script>
   <script type="text/javascript" src="../../msg/js/en.js"></script>
   <script type="text/javascript" src="Blob.js"></script>
   <script type="text/javascript" src="spin.js"></script>
@@ -350,13 +328,6 @@ function init() {
     </category>
     <category name="Control">
       <block type="base_delay">
-        <value name="DELAY_TIME">
-          <block type="math_number">
-            <field name="NUM">1000</field>
-          </block>
-        </value>
-      </block>
-      <block type="james_delay_microseconds">
         <value name="DELAY_TIME">
           <block type="math_number">
             <field name="NUM">1000</field>
