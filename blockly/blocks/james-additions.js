@@ -56,3 +56,17 @@ Blockly.Blocks['serial_print'] = {
     this.setTooltip('Prints data to the console/serial port as human-readable ASCII text.');
   }
 };
+
+Blockly.Blocks['inout_pulseIn'] = {
+  helpUrl: '',
+  init: function() {
+    this.setColour(230);
+    this.appendDummyInput()
+        .appendField("pulseIn")
+        .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN")
+        .appendField("Stat")
+      	.appendField(new Blockly.FieldDropdown([["HIGH", "HIGH"], ["LOW", "LOW"]]), "STAT");
+    this.setOutput(true, 'Number');
+    this.setTooltip('');
+  }
+};
