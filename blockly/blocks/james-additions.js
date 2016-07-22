@@ -50,7 +50,8 @@ Blockly.Blocks['serial_print'] = {
   init: function() {
     this.setColour(230);
     this.appendValueInput("CONTENT", 'String')
-        .appendField("Serial Println");
+        .appendField("Display to screen: ");
+        // alternatively... // .appendField("Serial Println");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip('Prints data to the console/serial port as human-readable ASCII text.');
