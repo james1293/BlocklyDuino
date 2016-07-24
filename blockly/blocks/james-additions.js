@@ -83,3 +83,17 @@ Blockly.Blocks['inout_digital_read_for_buttons'] = {
     this.setTooltip('');
   }
 };
+
+Blockly.Blocks['controls_forever'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Forever");
+    this.appendStatementInput("DO")
+        .appendField("do");
+    this.setColour(Blockly.Blocks.loops.HUE);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  }
+};

@@ -59,3 +59,9 @@ Blockly.Arduino.inout_digital_read_for_buttons = function() {
   var code = 'digitalRead(' + dropdown_pin + ')';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
+
+Blockly.Arduino['controls_forever'] = function(block) {
+  var statements_name = Blockly.Arduino.statementToCode(block, 'DO');
+  var code = 'while(true)\n{\n'+statements_name+'\n}\n';
+  return code;
+};
