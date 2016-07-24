@@ -51,3 +51,11 @@ Blockly.Arduino.inout_pulseIn = function() {
   var code = 'pulseIn(' + dropdown_pin + ', ' + dropdown_stat + ')';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
+
+
+Blockly.Arduino.inout_digital_read_for_buttons = function() {
+  var dropdown_pin = this.getFieldValue('PIN');
+  Blockly.Arduino.setups_['setup_input_' + dropdown_pin] = 'pinMode(' + dropdown_pin + ', INPUT_PULLUP);';
+  var code = 'digitalRead(' + dropdown_pin + ')';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};

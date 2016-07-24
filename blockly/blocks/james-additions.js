@@ -71,3 +71,15 @@ Blockly.Blocks['inout_pulseIn'] = {
     this.setTooltip('');
   }
 };
+
+Blockly.Blocks['inout_digital_read_for_buttons'] = {
+  helpUrl: 'http://arduino.cc/en/Reference/DigitalRead',
+  init: function() {
+    this.setColour(230);
+    this.appendDummyInput()
+	      .appendField("DigitalRead FOR BUTTONS PIN#")
+	      .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
+    this.setOutput(true, 'Boolean');
+    this.setTooltip('');
+  }
+};
