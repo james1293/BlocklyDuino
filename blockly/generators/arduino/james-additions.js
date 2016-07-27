@@ -47,7 +47,17 @@ Blockly.Arduino.serial_print = function() {
 Blockly.Arduino.inout_pulseIn = function() {
   var dropdown_pin = this.getFieldValue('PIN');
   var dropdown_stat = this.getFieldValue('STAT');
-  //Blockly.Arduino.setups_['setup_input_'+dropdown_pin] = 'pinMode('+dropdown_pin+', INPUT);';
+
+  var isAnalog = (dropdown_pin.substring(0,1) === 'A');
+  if (isAnalog)
+  {
+    //don't add a setup line for analog pins
+  }
+  else
+  {
+    Blockly.Arduino.setups_['setup_input_'+dropdown_pin] = 'pinMode('+dropdown_pin+', INPUT);';
+  }
+  
   var code = 'pulseIn(' + dropdown_pin + ', ' + dropdown_stat + ')';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
